@@ -13,7 +13,66 @@
 	
 	<h2>STUN Client</h2>
 
-		<p>&nbsp;</p>
+		<h3>NAT Behaviors</h3>
+		<p>NAT (Network Address Translation) is a protocol to map multiple private hosts to one publicly exposed IP address. Typically packets passing from the private network to the public network will have their source address modified while packets passing from the public network back to the private network will have their destination address modified. The mapping behavior of a NAT has typically two possibilities.</p> 
+		<ol>
+			<li>All requests from the same internal IP address and port are mapped to the same external IP address and port. This mapping behavior is called "Cone". </li>
+			<li>All requests from the same internal IP address and port, to a specific destination IP address and port, are mapped to the same external IP address and port. If the same host sends a packet with the same source address and port, but to a different destination, a different mapping is used. This mapping behavior is called "Symmetric". </li>
+		</ol>
+		<p>You should understand why they are named "Cone" and "Symmetric" with below diagrams (<a href="images/nat-mapping.png">Click to enlarge</a>).</p>
+		<a href="images/nat-mapping.png" target="_blank"><img src="images/nat-mapping.png" /></a>
+		<p>The filtering behavior of a "Cone" NAT has three possibilities. </p>
+		<ol>
+			<li>Any external host can send a packet to the internal host, by sending a packet to the mapped external address. This is "Full Cone". </li>
+			<li>An external host (with IP address X) can send a packet to the internal host only if the internal host had previously sent a packet to IP address X. This is "Address Restricted Cone". </li>
+			<li>The restriction includes port numbers. Specifically, an external host can send a packet, with source IP address X and source port P, to the internal host only if the internal host had previously sent a packet to IP address X and port P. This is "Port Restricted Cone".</li> 
+		</ol>
+		<a href="images/nat-filtering.png" target="_blank"><img src="images/nat-filtering.png" /></a>
+		<p>As to the "Symmetric" NAT, its filtering behavior is same as "Port Restricted Cone" NAT.</p>
+		
+		<h3>NAT Discovery with STUN Server</h3>
+		<p>STUN (IETF RFC 3489) is a protocol that allows two hosts to discover the presence and types of a NAT between them, and to find out what external IP address and port are to be replaced by the NAT. A classic algorithm consists of a series of tests is specified in RFC 3489 to characterize NAT behavior according to the address and port mapping behavior. As shown below, when the path through the diagram ends in a red box, UDP communication is not possible and when the path ends in a yellow or green box, communication is possible.</p>
+		<a href="images/stun.png" target="_blank"><img src="images/stun-discovery.png" /></a>
+		
+		<h3>STUN Client Demonstration</h3>
+		<p>We programmed an essential STUN client for NAT discovery. It is a command line tool running on Windows, Mac OS X, and Linux. The underlying well-designed C++ classes can be used in your applications to parse STUN messages. By default, the program connects to a stun server, does the test sequence of NAT discovery, and reports the (NAT) type of your host address, as shown in the following screen shot.</p>
+		<img src="images/stun-client.png" /></p>
+		<div id="download" class="box">
+            <p>Download source code or pre-compiled binary</p>
+            <table>
+                <tr>
+                    <td width="20%"><a href="download/win/stun.exe"><img src="/images/windows-logo.png" /></a></td>
+                    <td width="20%"><a href="download/mac/stun"><img src="/images/mac-logo.png" /></a></td>
+                    <td width="20%"><a href="download/linux/stun"><img src="/images/linux-logo.png" /></a></td>
+					<td width="20%"><a href="download/source/stun.zip"><img src="/images/zip-logo.png" /></a></td>
+					<td width="20%"><a href="https://github.com/limlabs/stun" target="_blank"><img src="/images/github-logo.png" /></a></td>
+                </tr>
+                <tr>
+                    <td width="20%"><a href="download/win/stun.exe">Windows</a></td>
+                    <td width="20%"><a href="download/mac/stun">Mac OS X</a></td>
+                    <td width="20%"><a href="download/linux/stun">Linux</a></td>
+					<td width="20%"><a href="download/source/stun.zip">Source code</a></td>
+					<td width="20%"><a href="https://github.com/limlabs/stun" target="_blank">Git repository</a></td>
+                </tr>
+            </table>
+        </div>
+		
+		<h3>FAQ</h3>
+		<p>Q: What type of server does the program works with?</p>
+		<p>A: The program works with a STUN server. It is currently compliant with IETF RFC 3489. The following version will support RFC 5389.</p>
+		<p>Q: It displayed "Permission denied" when I ran the program. How to resolve it?</p>
+		<p>Q: This may occur when you downloaded pre-compiled binary for Mac OS X or Linux system. The reason is the file you downloaded lack of "execution" right. Please run "chmod 777 [filename]" first.</p>
+		<p>Q: Why did it report that I was behind a restricted cone NAT when I first ran the test, but reported a full cone NAT in the following tests?</p>
+		<p>A: You should be behind a restricted cone NAT, so in general, as in the first test, you can not receive a response from a changed IP and port. But then ppconfig send a request to the changed IP and port to determine the type of NAT. A hole is opened to the changed IP and port at this time and it will keep open for a period (typically 30 seconds). So in the following test, you can receive a response from a changed IP and port, and it seems that you are behind a full cone NAT. This issue occurred because STUN server reuses a same changed address for different tests. A workaround is doing second test after a long enough period (e.g. 30 seconds or longer).</p>
+		
+		<h3>References</h3>
+		<ol>
+			<li>RFC 3489: STUN - Simple Traversal of User Datagram Protocol (UDP) Through Network Address Translators (NATs)</li>
+			<li>RFC 4787: Network Address Translation (NAT) Behavioral Requirements for Unicast UDP</li>
+			<li>RFC 5389: Session Traversal Utilities for NAT (STUN)</li>
+			<li>RFC 5769: Test Vectors for Session Traversal Utilities for NAT (STUN)</li>
+			<li>RFC 5780: NAT Behavior Discovery Using Session Traversal Utilities for NAT (STUN)</li>
+		</ol>
 
 	<h2>Contact Us</h2>
 

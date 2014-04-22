@@ -80,3 +80,25 @@ p {
 		sans-serif;
 	letter-spacing:1px;
 }
+
+#download {
+	margin: 20px 0px;
+	text-align:center;
+}
+
+#download p {
+	text-align: center;
+}
+#download table {
+	width: 100%;
+	margin: 20px 0px;
+	text-align: center;
+}
+
+div.box {
+    overflow: visible;
+    border:1px dashed #B4B4B4;
+    -moz-border-radius: 5px;     
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
