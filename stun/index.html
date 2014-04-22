@@ -61,7 +61,7 @@
 		<p>Q: What type of server does the program works with?</p>
 		<p>A: The program works with a STUN server. It is currently compliant with IETF RFC 3489. The following version will support RFC 5389.</p>
 		<p>Q: It displayed "Permission denied" when I ran the program. How to resolve it?</p>
-		<p>Q: This may occur when you downloaded pre-compiled binary for Mac OS X or Linux system. The reason is the file you downloaded lack of "execution" right. Please run "chmod 777 [filename]" first.</p>
+		<p>A: This may occur when you downloaded pre-compiled binary for Mac OS X or Linux system. The reason is the file you downloaded lack of "execution" right. Please run "chmod 777 [filename]" first.</p>
 		<p>Q: Why did it report that I was behind a restricted cone NAT when I first ran the test, but reported a full cone NAT in the following tests?</p>
 		<p>A: You should be behind a restricted cone NAT, so in general, as in the first test, you can not receive a response from a changed IP and port. But then ppconfig send a request to the changed IP and port to determine the type of NAT. A hole is opened to the changed IP and port at this time and it will keep open for a period (typically 30 seconds). So in the following test, you can receive a response from a changed IP and port, and it seems that you are behind a full cone NAT. This issue occurred because STUN server reuses a same changed address for different tests. A workaround is doing second test after a long enough period (e.g. 30 seconds or longer).</p>
 		

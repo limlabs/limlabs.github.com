@@ -52,17 +52,22 @@ h1, h2, h3 {
 	font-weight: bold;
 }
 
-h1 { font-size: 138.5%; }
-h2 { font-size: 123.1%; }
+h1 { font-size: 167%; }
+h2 { font-size: 138.5%; }
 h3 { font-size: 108%; }
 
 p {
-	margin-left: 20pt;
-  	line-height: 140%;
+	margin-left:20px;
+  	line-height:140%;
 }
 
 img {
-	max-width:800px;
+	max-width:700px;
+	margin-left:20px;
+}
+
+li{
+	margin-bottom: 8px;
 }
 
 .title {
@@ -87,6 +92,7 @@ img {
 
 #download {
 	margin: 20px 0px;
+	width:700px;
 	text-align:center;
 }
 
@@ -94,7 +100,7 @@ img {
 	text-align: center;
 }
 #download table {
-	width: 800px;
+	width: 100%;
 	margin: 20px 0px;
 	text-align: center;
 }
