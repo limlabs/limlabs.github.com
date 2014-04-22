@@ -20,23 +20,23 @@
 			<li>All requests from the same internal IP address and port, to a specific destination IP address and port, are mapped to the same external IP address and port. If the same host sends a packet with the same source address and port, but to a different destination, a different mapping is used. This mapping behavior is called "Symmetric". </li>
 		</ol>
 		<p>You should understand why they are named "Cone" and "Symmetric" with below diagrams (<a href="images/nat-mapping.png">Click to enlarge</a>).</p>
-		<a href="images/nat-mapping.png" target="_blank"><img src="images/nat-mapping.png" /></a>
+		<p><a href="images/nat-mapping.png" target="_blank"><img src="images/nat-mapping.png" /></a></p>
 		<p>The filtering behavior of a "Cone" NAT has three possibilities. </p>
 		<ol>
 			<li>Any external host can send a packet to the internal host, by sending a packet to the mapped external address. This is "Full Cone". </li>
 			<li>An external host (with IP address X) can send a packet to the internal host only if the internal host had previously sent a packet to IP address X. This is "Address Restricted Cone". </li>
 			<li>The restriction includes port numbers. Specifically, an external host can send a packet, with source IP address X and source port P, to the internal host only if the internal host had previously sent a packet to IP address X and port P. This is "Port Restricted Cone".</li> 
 		</ol>
-		<a href="images/nat-filtering.png" target="_blank"><img src="images/nat-filtering.png" /></a>
+		<p><a href="images/nat-filtering.png" target="_blank"><img src="images/nat-filtering.png" /></a></p>
 		<p>As to the "Symmetric" NAT, its filtering behavior is same as "Port Restricted Cone" NAT.</p>
 		
 		<h3>NAT Discovery with STUN Server</h3>
 		<p>STUN (IETF RFC 3489) is a protocol that allows two hosts to discover the presence and types of a NAT between them, and to find out what external IP address and port are to be replaced by the NAT. A classic algorithm consists of a series of tests is specified in RFC 3489 to characterize NAT behavior according to the address and port mapping behavior. As shown below, when the path through the diagram ends in a red box, UDP communication is not possible and when the path ends in a yellow or green box, communication is possible.</p>
-		<a href="images/stun.png" target="_blank"><img src="images/stun-discovery.png" /></a>
+		<p><a href="images/stun.png" target="_blank"><img src="images/stun-discovery.png" /></a></p>
 		
 		<h3>STUN Client Demonstration</h3>
 		<p>We programmed an essential STUN client for NAT discovery. It is a command line tool running on Windows, Mac OS X, and Linux. The underlying well-designed C++ classes can be used in your applications to parse STUN messages. By default, the program connects to a stun server, does the test sequence of NAT discovery, and reports the (NAT) type of your host address, as shown in the following screen shot.</p>
-		<img src="images/stun-client.png" /></p>
+		<p><img src="images/stun-client.png" /></p>
 		<div id="download" class="box">
             <p>Download source code or pre-compiled binary</p>
             <table>
