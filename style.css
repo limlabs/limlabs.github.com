@@ -97,12 +97,12 @@ li{
 
 #download p {
 	text-align: center;
-	font-size:85%;
 }
 #download table {
 	width: 100%;
 	margin: 20px 0px;
 	text-align: center;
+	font-size:85%;
 }
 
 div.box {
