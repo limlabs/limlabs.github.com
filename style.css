@@ -92,12 +92,12 @@ li{
 #download {
 	margin: 20px;
 	width:550px;
-	font-size:85%;
 	text-align:center;
 }
 
 #download p {
 	text-align: center;
+	font-size:85%;
 }
 #download table {
 	width: 100%;
