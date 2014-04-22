@@ -52,8 +52,8 @@ h1, h2, h3 {
 	font-weight: bold;
 }
 
-h1 { font-size: 131%; }
-h2 { font-size: 116%; }
+h1 { font-size: 138.5%; }
+h2 { font-size: 123.1%; }
 h3 { font-size: 108%; }
 
 p {
@@ -63,4 +63,6 @@ p {
 
 .invisible {
 	visibility:hidden;
+	display:block;
+	height:5px;
 }
