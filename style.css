@@ -61,8 +61,22 @@ p {
   	line-height: 140%;
 }
 
-.invisible {
-	visibility:hidden;
-	display:block;
-	height:5px;
+.title {
+	display:none;
+}
+
+.sub-title {
+	margin:0;
+	padding:0;
+	padding-bottom:20px;
+	color:#7d2e01;
+	font-family:
+		"wide latin",
+		"luxi sans",
+		"helvetica narrow",
+		"arial condensed",
+		"arial",
+		"univers",
+		sans-serif;
+	letter-spacing:1px;
 }
