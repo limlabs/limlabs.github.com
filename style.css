@@ -62,7 +62,7 @@ p {
 }
 
 img {
-	max-width:50%;
+	max-width:800px;
 }
 
 .title {
@@ -94,7 +94,7 @@ img {
 	text-align: center;
 }
 #download table {
-	width: 100%;
+	width: 800px;
 	margin: 20px 0px;
 	text-align: center;
 }
