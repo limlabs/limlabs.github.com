@@ -24,13 +24,7 @@ body {
 	background-color: #FFFFEE;
 	margin: 30px 40px 40px 40px;
 	color: black;
-	font-family:
-		"Georgia",
-		"Luxi Serif",
-		"New Century Schoolbook",
-		"Times New Roman",
-		"Times",
-		serif;
+	font-family: Arial, Arial, Helvetica, sans-serif;
 	font-size: 100%;
 }
 
@@ -41,14 +35,7 @@ A:active { color: #da7417; background-color: inherit; }
 
 h1, h2, h3 {
 	color: #501000;
-	font-family:
-		"verdana",
-		"luxi sans",
-		"helvetica narrow",
-		"arial condensed",
-		"arial",
-		"univers",
-		sans-serif;
+	font-family: Arial, Arial, Helvetica, sans-serif;
 	font-weight: bold;
 }
 
@@ -78,14 +65,7 @@ li{
 	padding:0;
 	padding-bottom:20px;
 	color:#7d2e01;
-	font-family:
-		"wide latin",
-		"luxi sans",
-		"helvetica narrow",
-		"arial condensed",
-		"arial",
-		"univers",
-		sans-serif;
+	font-family:"wide latin", Arial, Helvetica, sans-serif;
 	letter-spacing:1px;
 }
 
