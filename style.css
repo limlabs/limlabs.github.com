@@ -24,7 +24,7 @@ body {
 	background-color: #FFFFEE;
 	margin: 30px 40px 40px 40px;
 	color: black;
-	font-family: "Times New Roman", Times, serif;
+	font-family: "Arial", Helvetica, sans-serif;
 	font-size: 100%;
 }
 
@@ -66,7 +66,7 @@ li{
 	padding-bottom:20px;
 	color:#7d2e01;
 	font-family:"Courier New", Courier, monospace;
-	letter-spacing:1px;
+	font-weight:bold;
 }
 
 #download {
