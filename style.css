@@ -1,58 +1,85 @@
-/* YUI Fonts (http://developer.yahoo.com/yui/fonts/) portable sizes:
+/* Font size conversion
 
-  px  %
-  ==  ====
-  10  77
-  11  85
-  12  93
-  13  100
-  14  108
-  15  116
-  16  123.1
-  17  131
-  18  138.5
-  19  146.5
-  20  153.9
-  21  161.6
-  22  167
-  23  174
-  25  189
-  26  197
+6pt	    8px	    0.5em	    50%
+7pt	    9px	    0.55em	  55%
+7.5pt	  10px	  0.625em	  62.5%
+8pt	    11px	  0.7em	    70%
+9pt	    12px	  0.75em	  75%
+10pt	  13px	  0.8em	    80%
+10.5pt	14px	  0.875em	  87.5%
+11pt	  15px	  0.95em	  95%
+12pt	  16px	  1em	      100%
+13pt	  17px	  1.05em	  105%
+13.5pt	18px	  1.125em	  112.5%
+14pt	  19px	  1.2em	    120%
+14.5pt	20px	  1.25em	  125%
+15pt	  21px	  1.3em	    130%
+16pt	  22px	  1.4em	    140%
+17pt	  23px	  1.45em	  145%
+18pt	  24px	  1.5em	    150%
+20pt	  26px	  1.6em	    160%
+22pt	  29px	  1.8em	    180%
+24pt	  32px	  2em	      200%
+26pt	  35px	  2.2em	    220%
+27pt	  36px	  2.25em	  225%
+28pt	  37px	  2.3em	    230%
+29pt	  38px	  2.35em	  235%
+30pt	  40px	  2.45em	  245%
+32pt	  42px	  2.55em	  255%
+34pt	  45px	  2.75em	  275%
+36pt	  48px	  3em	      300%
 */
 
 body {
 	background-color: #FFFFEE;
 	margin: 30px 40px 40px 40px;
 	color: black;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
 }
 
-A:link { color: #7d2e01; background-color: inherit; }
-A:visited { color: #491e00; background-color: inherit; }
-A:hover { color: black; background-color: inherit; } /* temporary; fix open <a> tags! */
-A:active { color: #da7417; background-color: inherit; }
+a:link { 
+  color: #7d2e01; 
+}
+
+a:visited { 
+  color: #491e00; 
+}
+
+a:hover { 
+  color: black; 
+}
+
+a:active { 
+  color: #da7417; 
+}
 
 h1, h2, h3 {
 	color: #501000;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-weight: bold;
 }
 
-h1 { font-size: 131%; }
-h2 { font-size: 108%; }
-h3 { font-size: 100%; }
+h1 { 
+  font-size: 1.4em; 
+}
+
+h2 { 
+  font-size: 1.2em; 
+}
+
+h3 { 
+  font-size: 1em; 
+}
 
 p {
 	margin-left:20px;
-  	line-height:150%;
+  line-height:150%;
 }
 
 img {
 	max-width:700px;
 }
 
-li{
+li {
 	margin-bottom: 8px;
 }
 
@@ -66,7 +93,6 @@ li{
 	padding-bottom:20px;
 	color:#7d2e01;
 	font-family:"Courier New", Courier, monospace;
-	font-size:108%;
 	font-weight:bold;
 	letter-spacing:2px;
 }
@@ -80,11 +106,12 @@ li{
 #download p {
 	text-align: center;
 }
+
 #download table {
 	width: 100%;
 	margin: 20px 0px;
 	text-align: center;
-	font-size:93%;
+	font-size:0.75em;
 }
 
 div.box {
