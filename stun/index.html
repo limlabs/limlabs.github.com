@@ -13,7 +13,11 @@
 	
 	<h1>STUN Client</h1>
 
-		<h2>NAT Behaviors</h2>
+    <p>This program is essentially a IETF RFC3489/5389 compatible STUN client. It follows a work flow in the RFC specifications for NAT discovery. Based on address mapping and filtering behaviors of NAT, if exist, local address is classified into various types, which indicates the reachability of local host in peer-to-peer networking.</p>
+    
+    <p><a href="images/stunclient.png" target="_blank"><img src="images/stunclient.png" /></a></p>
+    
+		<h2>NAT Behaviors and Address Types</h2>
 		<p>NAT (Network Address Translation) is a protocol to map multiple private hosts to one publicly exposed IP address. Typically packets passing from the private network to the public network will have their source address modified while packets passing from the public network back to the private network will have their destination address modified. The mapping behavior of a NAT has typically two possibilities.</p> 
 		<ol>
 			<li>All requests from the same internal IP address and port are mapped to the same external IP address and port. This mapping behavior is called "Cone". </li>
@@ -31,32 +35,14 @@
 		<p>As to the "Symmetric" NAT, its filtering behavior is same as "Port Restricted Cone" NAT.</p>
 		
 		<h2>NAT Discovery with STUN Server</h2>
-		<p>STUN (IETF RFC 3489) is a protocol that allows two hosts to discover the presence and types of a NAT between them, and to find out what external IP address and port are to be replaced by the NAT. A classic algorithm consists of a series of tests is specified in RFC 3489 to characterize NAT behavior according to the address and port mapping behavior. As shown below, when the path through the diagram ends in a red box, UDP communication is not possible and when the path ends in a yellow or green box, communication is possible.</p>
+		<p>STUN (IETF RFC 3489/5389) is a protocol that allows two hosts to discover the presence and types of a NAT between them, and to find out what external IP address and port are to be replaced by the NAT. A classic algorithm consists of a series of tests is specified in RFC 3489/5389 to characterize NAT behavior according to the address and port mapping behavior. As shown below, when the path through the diagram ends in a red box, UDP communication is not possible and when the path ends in a yellow or green box, communication is possible.</p>
 		<p><a href="images/stun.png" target="_blank"><img src="images/stun-discovery.png" /></a></p>
 		
-		<h2>STUN Client Demonstration</h2>
-		<p>We programmed an essential STUN client for NAT discovery. It is a command line tool running on Windows, Mac OS X, and Linux. The underlying well-designed C++ classes can be used in your applications to parse STUN messages. By default, the program connects to a stun server, does the test sequence of NAT discovery, and reports the (NAT) type of your host address, as shown in the following screen shot.</p>
-		<p><img src="images/stun-client.png" /></p>
-		<div id="download" class="box">
-            <p>Download source code or pre-compiled binary</p>
-            <table>
-                <tr>
-                    <td width="20%"><a href="download/win/stun.exe"><img src="/images/windows-logo.png" /></a></td>
-                    <td width="20%"><a href="download/mac/stun"><img src="/images/mac-logo.png" /></a></td>
-                    <td width="20%"><a href="download/linux/stun"><img src="/images/linux-logo.png" /></a></td>
-					<td width="20%"><a href="download/source/stunclient.zip"><img src="/images/zip-logo.png" /></a></td>
-					<td width="20%"><a href="https://github.com/limlabs/stunclient" target="_blank"><img src="/images/github-logo.png" /></a></td>
-                </tr>
-                <tr>
-                    <td width="20%"><a href="download/win/stun.exe">Windows</a></td>
-                    <td width="20%"><a href="download/mac/stun">Mac OS X</a></td>
-                    <td width="20%"><a href="download/linux/stun">Linux</a></td>
-					<td width="20%"><a href="download/source/stunclient.zip">Source code</a></td>
-					<td width="20%"><a href="https://github.com/limlabs/stunclient" target="_blank">Git repository</a></td>
-                </tr>
-            </table>
-        </div>
+		<h2>Demo Program</h2>
+		<p>We programmed an essential STUN client for NAT discovery. It is a command line tool running on Windows, Mac OS X, and Linux. The underlying well-designed C++ classes can be used in your applications to parse STUN messages. By default, the program connects to a stun server, does the test sequence of NAT discovery, and reports the (NAT) type of your host address. Please find a copy of complete source code at <a href="https://github.com/limlabs/stunclient" target="_blank">https://github.com/limlabs/stunclient</a>. Below is a screen shot of the program.</p>
 		
+    <p><img src="images/screnshot.png" /></p>
+    
 		<h2>FAQ</h2>
 		<p>Q: What type of server does the program works with?</p>
 		<p>A: The program works with a STUN server. It is currently compliant with IETF RFC 3489. The following version will support RFC 5389.</p>
