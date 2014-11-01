@@ -71,7 +71,7 @@ h3 {
 }
 
 p {
-	margin-left:20px;
+  margin-left:20px;
   line-height:150%;
 }
 
@@ -83,17 +83,25 @@ li {
 	margin-bottom: 8px;
 }
 
-.title {
+div.box {
+    overflow: visible;
+    border:1px dashed #B4B4B4;
+    -moz-border-radius: 5px;     
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+#header h1 {
 	display:none;
 }
 
-.sub-title {
+#header p {
 	margin:0;
 	padding:0;
 	padding-bottom:20px;
 	color:#7d2e01;
 	font-family:"Courier New", Courier, monospace;
-  font-size:1.05em;
+	font-size:1.05em;
 	font-weight:bold;
 	letter-spacing:2px;
 }
@@ -115,10 +123,3 @@ li {
 	font-size:0.875em;
 }
 
-div.box {
-    overflow: visible;
-    border:1px dashed #B4B4B4;
-    -moz-border-radius: 5px;     
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-}
