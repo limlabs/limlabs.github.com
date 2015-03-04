@@ -1,69 +1,57 @@
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="shortcut icon" href="/images/favicon.png">
-	<link rel="icon" href="/images/favicon.png" type="image/png">
-	<link href="/style.css" rel="stylesheet" type="text/css">
-	<title>LIM Labs - STUN Client</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="/images/favicon.png">
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link href="/style.css" rel="stylesheet" type="text/css">
+<title>LIM Labs - STUN Parser</title>
 </head>
-<body>
-	<a href="/"><img src="/images/logo.png" /></a>
-	<h1 class="title">LIM Labs</h1>
-	<p class="sub-title">lim (artisan) = artist</p>
-	
-	<h1>STUN Client</h1>
 
-    <p>This program is essentially a IETF RFC3489/5389 compatible STUN client. It follows a work flow in the RFC specifications for NAT discovery. Based on address mapping and filtering behaviors of NAT, if exist, local address is classified into various types, which indicates the reachability of local host in peer-to-peer networking.</p>
-    
-    <p><a href="images/stunclient.png" target="_blank"><img src="images/stunclient.png" /></a></p>
-    
-		<h2>NAT Behaviors and Address Types</h2>
-		<p>NAT (Network Address Translation) is a protocol to map multiple private hosts to one publicly exposed IP address. Typically packets passing from the private network to the public network will have their source address modified while packets passing from the public network back to the private network will have their destination address modified. The mapping behavior of a NAT has typically two possibilities.</p> 
-		<ol>
-			<li>All requests from the same internal IP address and port are mapped to the same external IP address and port. This mapping behavior is called "Cone". </li>
-			<li>All requests from the same internal IP address and port, to a specific destination IP address and port, are mapped to the same external IP address and port. If the same host sends a packet with the same source address and port, but to a different destination, a different mapping is used. This mapping behavior is called "Symmetric". </li>
-		</ol>
-		<p>You should understand why they are named "Cone" and "Symmetric" with below diagrams (<a href="images/nat-mapping.png">Click to enlarge</a>).</p>
-		<p><a href="images/nat-mapping.png" target="_blank"><img src="images/nat-mapping.png" /></a></p>
-		<p>The filtering behavior of a "Cone" NAT has three possibilities. </p>
-		<ol>
-			<li>Any external host can send a packet to the internal host, by sending a packet to the mapped external address. This is "Full Cone". </li>
-			<li>An external host (with IP address X) can send a packet to the internal host only if the internal host had previously sent a packet to IP address X. This is "Address Restricted Cone". </li>
-			<li>The restriction includes port numbers. Specifically, an external host can send a packet, with source IP address X and source port P, to the internal host only if the internal host had previously sent a packet to IP address X and port P. This is "Port Restricted Cone".</li> 
-		</ol>
-		<p><a href="images/nat-filtering.png" target="_blank"><img src="images/nat-filtering.png" /></a></p>
-		<p>As to the "Symmetric" NAT, its filtering behavior is same as "Port Restricted Cone" NAT.</p>
+<body>
+<div id="header">
+	<div class="container">
+		<a href="/"><img src="/images/logo.png" /></a>
+		<h1>LIM Labs</h1>
+		<p>Pursue the Limits of Networking</p>
+		<ul>
+			<li><a href="/services.html">Services</a></li>
+			<li><a href="/portfolio.html">Portfolio</a></li>
+			<li><a href="/blog.html">Blog</a></li>
+			<li><a href="/about.html">About</a></li>
+		</ul>
+	</div>
+</div>
+<div id="main">
+	<div class="container">
 		
-		<h2>NAT Discovery with STUN Server</h2>
-		<p>STUN (IETF RFC 3489/5389) is a protocol that allows two hosts to discover the presence and types of a NAT between them, and to find out what external IP address and port are to be replaced by the NAT. A classic algorithm consists of a series of tests is specified in RFC 3489/5389 to characterize NAT behavior according to the address and port mapping behavior. As shown below, when the path through the diagram ends in a red box, UDP communication is not possible and when the path ends in a yellow or green box, communication is possible.</p>
-		<p><a href="images/stun.png" target="_blank"><img src="images/stun-discovery.png" /></a></p>
+	<h1>STUN Parser</h1>
+
+	<p>NAT (Network Address Translation) is a protocol to map multiple private hosts to one publicly exposed IP address. Typically packets passing from the private network to the public network will have their source address modified while packets passing from the public network back to the private network will have their destination address modified. The NAT address mapping and filtering behaviors prevent a local host from being connected directly by a host on public network, while that is necessary for peer-to-peer networking. A series of IETF specifications are proposed to resolve the connection issues raised from NAT. You may find the related knowledge in this blog <a href="#">post</a>.
 		
-		<h2>Demo Program</h2>
-		<p>We programmed an essential STUN client for NAT discovery. It is a command line tool running on Windows, Mac OS X, and Linux. The underlying well-designed C++ classes can be used in your applications to parse STUN messages. By default, the program connects to a stun server, does the test sequence of NAT discovery, and reports the (NAT) type of your host address. Please find a copy of complete source code at <a href="https://github.com/limlabs/stunclient" target="_blank">https://github.com/limlabs/stunclient</a>. Below is a screen shot of the program.</p>
+	<p>STUN (IETF RFC 3489/5389) is a protocol that allows two hosts to discover the presence and types of a NAT between them, and to find out what external IP address and port are to be replaced by the NAT. A work flow for NAT discovery is defined in these specifications. Based on address mapping and filtering behaviors of NAT, if exist, local address is classified into various types, which indicates the reachability of local host in peer-to-peer networking. Please find details in this blog <a href="#">post</a>.</p>
+	
+    <img src="images/stunclient.png" />
+
+	<h1>Demo Program</h1>
+	<p>This program is essentially a STUN client for NAT discovery. It is a command line tool running on Windows, Mac OS X, and Linux. The underlying well-designed C++ classes can be used in your applications to parse STUN messages. By default, the program connects to a stun server, does the test sequence of NAT discovery, and reports the (NAT) type of your host address. You may find a copy of source code at <a href="https://github.com/limlabs/stunclient" target="_blank">Github</a>. Below is a screenshot of the running program.</p>
 		
     <p><img src="images/screenshot.png" /></p>
     
-		<h2>FAQ</h2>
-		<p>Q: What type of server does the program works with?</p>
-		<p>A: The program works with a STUN server. It is currently compliant with IETF RFC 3489. The following version will support RFC 5389.</p>
-		<p>Q: It displayed "Permission denied" when I ran the program. How to resolve it?</p>
-		<p>A: This may occur when you downloaded pre-compiled binary for Mac OS X or Linux system. The reason is the file you downloaded lack of "execution" right. Please run "chmod 777 [filename]" first.</p>
-		<p>Q: Why did it report that I was behind a restricted cone NAT when I first ran the test, but reported a full cone NAT in the following tests?</p>
-		<p>A: You should be behind a restricted cone NAT, so in general, as in the first test, you can not receive a response from a changed IP and port. But then ppconfig send a request to the changed IP and port to determine the type of NAT. A hole is opened to the changed IP and port at this time and it will keep open for a period (typically 30 seconds). So in the following test, you can receive a response from a changed IP and port, and it seems that you are behind a full cone NAT. This issue occurred because STUN server reuses a same changed address for different tests. A workaround is doing second test after a long enough period (e.g. 30 seconds or longer).</p>
+	<h1>FAQ</h1>
+	<p>Q: What type of server does the program works with?</p>
+	<p>A: The program works with a STUN server. It is currently compliant with IETF RFC 3489. The following version will support RFC 5389.</p>
+	<p>Q: It displayed "Permission denied" when I ran the program. How to resolve it?</p>
+	<p>A: This may occur when you downloaded pre-compiled binary for Mac OS X or Linux system. The reason is the file you downloaded lack of "execution" right. Please run "chmod 777 [filename]" first.</p>
+	<p>Q: Why did it report that I was behind a restricted cone NAT when I first ran the test, but reported a full cone NAT in the following tests?</p>
+	<p>A: You should be behind a restricted cone NAT, so in general, as in the first test, you can not receive a response from a changed IP and port. But then ppconfig send a request to the changed IP and port to determine the type of NAT. A hole is opened to the changed IP and port at this time and it will keep open for a period (typically 30 seconds). So in the following test, you can receive a response from a changed IP and port, and it seems that you are behind a full cone NAT. This issue occurred because STUN server reuses a same changed address for different tests. A workaround is doing second test after a long enough period (e.g. 30 seconds or longer).</p>
 		
-		<h2>References</h2>
-		<ol>
-			<li>RFC 3489: STUN - Simple Traversal of User Datagram Protocol (UDP) Through Network Address Translators (NATs)</li>
-			<li>RFC 4787: Network Address Translation (NAT) Behavioral Requirements for Unicast UDP</li>
-			<li>RFC 5389: Session Traversal Utilities for NAT (STUN)</li>
-			<li>RFC 5769: Test Vectors for Session Traversal Utilities for NAT (STUN)</li>
-			<li>RFC 5780: NAT Behavior Discovery Using Session Traversal Utilities for NAT (STUN)</li>
-		</ol>
-
-	<h1>Contact Us</h1>
-
-		<p>We can create readable, maintainable, scalable, testable, documented, and flexible code. 
-		Please contact us at <a href="#">team@limlabs.com</a> for software development or consulting service.</p>
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<p>Copyright 2010-2014 LIM Labs. Please contact at <a href="#">support@limlabs.com</a> for any questions.</p>
+	</div>
+</div>
 </body>
 </html>
 
