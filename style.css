@@ -29,6 +29,8 @@ body {
 	padding: 0;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
+	text-align: center;
+	background-color: #FFFFEE;
 }
 
 a:link { 
@@ -52,15 +54,23 @@ h1, h2, h3 {
 }
 
 h1 { 
-  font-size: 1.125em; 
+  font-size: 1.5em; 
+  font-weight: normal;
 }
 
 h2 { 
-  font-size: 1.125em; 
+  font-size: 1.375em; 
+  font-weight: normal;
 }
 
 h3 { 
-  font-size: 1em; 
+  font-size: 1.25em; 
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.125em;
+  font-weight: normal;
 }
 
 p {
@@ -92,8 +102,8 @@ div.box {
 }
 
 #main {
-	padding: 20px 0;
-	min-height: 300px;
+	padding: 100px 0;
+	height: 180px;
 	line-height: 150%;
 }
 
@@ -104,7 +114,8 @@ div.box {
 
 .container {
 	margin: 0 auto;
-	width: 810px;
+	width: 800px;
+	text-align: left;
 }
 
 #header a:link, #header a:visited {
