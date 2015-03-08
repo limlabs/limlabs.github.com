@@ -25,159 +25,184 @@
 */
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 100%;
-	text-align: center;
-	background-color: #FFFFEE;
+	margin:0;
+	padding:0;
+	font-family:Helvetica, Arial, sans-serif;
+	text-align:center; /* Necessary for IE 6,7,8 */
 }
 
-a:link { 
-  color: #7d2e01; 
+h1 {
+	font-size:1.5em;
+	font-weight:normal;
 }
 
-a:visited { 
-  color: #491e00; 
+h2 {
+	font-size:1.375em;
+	font-weight:normal;
 }
 
-a:hover { 
-  color: black; 
+h3 {
+	font-size:1.25em;
+	font-weight:normal;
 }
-
-a:active { 
-  color: #da7417; 
-}
-
-h1, h2, h3 {
-	color: #501000;
-}
-
-h1 { 
-  font-size: 1.5em; 
-  font-weight: normal;
-}
-
-h2 { 
-  font-size: 1.375em; 
-  font-weight: normal;
-}
-
-h3 { 
-  font-size: 1.25em; 
-  font-weight: normal;
-}
-
+	
 h4 {
-  font-size: 1.125em;
-  font-weight: normal;
+	font-size:1.125em;
+	font-weight:normal;
 }
 
-p {
-  font-size: 1em;
-  line-height:150%;
+a img {
+	border:none; /* necessary for IE 6-10 */
 }
 
-img {
-	max-width:700px;
+a:link {
+	color: #666;
+	text-decoration: underline;
 }
 
-li {
-	font-size: 1em;
-	margin-bottom: 8px;
+a:visited {
+	color: #666;
+	text-decoration: underline;
 }
 
-div.box {
-    overflow: visible;
-    border:1px dashed #B4B4B4;
-    -moz-border-radius: 5px;     
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
+a:hover, 
+a:active {
+	color: orange;
+	text-decoration: underline;
+}
+
+ul li {
+	list-style-image: url('/images/li_yellow.png');
 }
 
 #header {
-	margin-top: 20px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #666;
+	padding-top:1em;
+	padding-bottom:34px; /* the height of background image */
+	background-image: url('/images/border.gif');
+	background-repeat: repeat-x;
+	background-position: bottom;
 }
 
 #main {
-	padding: 100px 0;
-	height: 180px;
-	line-height: 150%;
+	padding:1em 0;
+	line-height:150%;
 }
 
 #footer {
-	margin-bottom: 20px;
-	border-top: 1px solid #666;
+	padding-bottom:2em;
+	border-top:1px solid #aaa;
 }
 
 .container {
-	margin: 0 auto;
-	width: 800px;
-	text-align: left;
+	margin:0 auto;
+	width:900px;
+	clear:both;
+	overflow:hidden; /* Necessary for background-position in header for IE 11 */
+	text-align:left;
+	font-size:100%;
 }
 
-#header a:link, #header a:visited {
-	color: #7d2e01; 
-	text-decoration: none;
+/* 900 and less */
+@media screen and (max-width: 900px) {
+  .container {
+	width:auto;
+    font-size: 100%;
+  }
 }
 
-#header a:hover {
-	color: black;
-	text-decoration: underline;
+/* 720 and less */
+@media screen and (max-width: 720px) {
+  .container {
+    font-size: 87.5%;
+  }
 }
 
-#header a:active {
-	color: #da7417; 
-	text-decoration: underline;
+/* 640 and less */
+@media screen and (max-width: 640px) {
+  .container {
+    font-size: 75%;
+  }
 }
 
-#header h1, #header p {
+/* 480 and less*/
+@media screen and (max-width: 480px) {
+  #wrapper {
+    font-size: 50%;
+  }
+}
+
+#header h1, 
+#header p {
 	display:none;
+} 
+
+#header image {
+	float:left;
 }
 
 #header ul {
 	float:right;
-	list-style: none;
-	margin-top: 50px;
-	padding: 0;
+	list-style:none;
+	margin-top:22px; /* determined by height of logo image*/
+	padding:0;
 }
 
 #header ul li {
-	float: left;
-	padding: 0 15px;
+	float:left;
+	list-style:none; /* necessary for some IE version */
+	margin:0 1em;
 }
 
-#footer a:link, #footer a:visited {
-	color: #7d2e01; 
-	text-decoration: underline;
-}
-
-#footer a:hover {
+#header a:link {
 	color: black;
+	text-decoration: none;
+}
+
+#header a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#header a:hover, 
+#header a:active {
+	color: orange;
 	text-decoration: underline;
 }
 
-#footer a:active {
-	color: #da7417; 
+.section {
+	margin-top: 1em;
+}
+
+.highlight {
+	color: orange;
+}
+
+a.highlight:link {
+	color: orange;
+	text-decoration: none;
+}
+
+a.highlight:visited {
+	color: orange;
+	text-decoration: none;
+}
+
+a.highlight:hover, 
+a.highlight:active {
+	color: orange;
 	text-decoration: underline;
 }
 
-#download {
-	margin: 20px;
-	width:550px;
-	text-align:center;
+img.banner {
+	width:100%;
 }
 
-#download p {
-	text-align: center;
+img.more {
+	margin-left: 0.5em;
 }
 
-#download table {
-	width: 100%;
-	margin: 20px 0px;
-	text-align: center;
-	font-size:0.875em;
+img.right {
+	float: right;
 }
+
 

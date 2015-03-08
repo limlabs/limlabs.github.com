@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>dns/index.html</string>
+	<string>index.html</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -92,13 +92,15 @@
 			<key>filename</key>
 			<string>style.css</string>
 			<key>lastUsed</key>
-			<date>2015-03-04T08:57:15Z</date>
+			<date>2015-03-05T09:52:39Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>index.html</string>
 			<key>lastUsed</key>
-			<date>2015-03-04T09:04:58Z</date>
+			<date>2015-03-05T09:52:39Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -240,28 +242,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>19</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>22</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>10</integer>
-			</dict>
+			<integer>2</integer>
 		</dict>
 		<key>portfolio.html</key>
 		<dict>
@@ -326,12 +312,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>154</integer>
+				<integer>119</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>137</integer>
+			<integer>88</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -353,6 +339,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{354, 46}, {1070, 698}}</string>
+	<string>{{210, 68}, {1070, 698}}</string>
 </dict>
 </plist>

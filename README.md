@@ -1,5 +1,5 @@
 limlabs.com
 ===========
 
-Homepage for LIM Labs.
+Homepage for Limlabs.
 
