@@ -86,6 +86,7 @@ ul li {
 #main {
 	padding:1em 0;
 	line-height:150%;
+	min-height: 400px;
 }
 
 #footer {
@@ -143,7 +144,7 @@ ul li {
 #header ul {
 	float:right;
 	list-style:none;
-	margin-top:22px; /* determined by height of logo image*/
+	margin:24px 0 0 0; /* determined by height of logo image*/
 	padding:0;
 }
 
@@ -171,26 +172,6 @@ ul li {
 
 .section {
 	margin-top: 1em;
-}
-
-.highlight {
-	color: orange;
-}
-
-a.highlight:link {
-	color: orange;
-	text-decoration: none;
-}
-
-a.highlight:visited {
-	color: orange;
-	text-decoration: none;
-}
-
-a.highlight:hover, 
-a.highlight:active {
-	color: orange;
-	text-decoration: underline;
 }
 
 img.banner {
