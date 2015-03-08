@@ -176,7 +176,7 @@ ol li {
 }
 
 .section {
-	margin-top: 1.5em;
+	margin-top: 1em;
 }
 
 .highlight {
@@ -209,6 +209,10 @@ img.more {
 
 img.right {
 	float: right;
+}
+
+img.left {
+	float: left;
 }
 
 
