@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<title>Limlabs - NAT Traversal</title>
+	<!-- css3-mediaqueries.js for IE8 or older -->
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div id="header">
+	<div class="container">
+		<a href="/"><img src="/images/logo.png" /></a>
+		<h1>Limlabs</h1>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/technologies">Technologies</a></li>
+			<li><a href="/projects">Projects</a></li>
+			<li><a href="/news">News</a></li>
+			<li><a href="/about">About</a></li>
+		</ul>
+	</div>
+</div>
+<div id="main">
+	<div class="container">
+	<h1>NAT: Network Address Translation</h1>
+	<img src="images/nat.png" height="205" class="right" />
+	<p>NAT is a protocol to map multiple private hosts to one publicly exposed IP address. Typically packets passing from the private network to the public network will have their source address modified while packets passing from the public network back to the private network will have their destination address modified. </p>
+	
+	<h2 class="section">Address Mapping</h2>
+	<p>The mapping behavior of a NAT has typically two possibilities.</p> 
+	<ul>
+		<li>All requests from the same internal IP address and port are mapped to the same external IP address and port. This mapping behavior is called "Cone". </li>
+		<li>All requests from the same internal IP address and port, to a specific destination IP address and port, are mapped to the same external IP address and port. If the same host sends a packet with the same source address and port, but to a different destination, a different mapping is used. This mapping behavior is called "Symmetric". </li>
+	</ul>
+	<p>You should understand why they are named "Cone" and "Symmetric" with below diagrams.</p>
+	<img src="images/nat-mapping.png" width="100%" />
+	
+	<h2 class="section">Address Filtering</h2>
+	<p>The filtering behavior of a "Cone" NAT has three possibilities. </p>
+	<ul>
+		<li>Any external host can send a packet to the internal host, by sending a packet to the mapped external address. This is "Full Cone". </li>
+		<li>An external host (with IP address X) can send a packet to the internal host only if the internal host had previously sent a packet to IP address X. This is "Address Restricted Cone". </li>
+		<li>The restriction includes port numbers. Specifically, an external host can send a packet, with source IP address X and source port P, to the internal host only if the internal host had previously sent a packet to IP address X and port P. This is "Port Restricted Cone".</li> 
+	</ul>
+	<img src="images/nat-filtering.png" width="100%" />
+	<p>The filtering behavior of "Symmetric" NAT is same as "Port Restricted Cone" NAT.</p>
+	
+	<h2 class="section">NAT Traversal</h2>
+	<p>The NAT address mapping and filtering behaviors prevent a local host from being connected directly by a host on public network, while that is necessary for peer-to-peer networking. A series of IETF specifications are proposed to resolve the connection issues raised from NAT, i.e. NAT traversal.</p>
+	<ul>
+		<li>RFC 4787: Network Address Translation (NAT) Behavioral Requirements for Unicast UDP</li>
+		<li>RFC 3489: STUN - Simple Traversal of User Datagram Protocol (UDP) Through Network Address Translators (NATs)</li>
+		<li>RFC 5389: Session Traversal Utilities for NAT (STUN)</li>
+		<li>RFC 5769: Test Vectors for Session Traversal Utilities for NAT (STUN)</li>
+		<li>RFC 5780: NAT Behavior Discovery Using Session Traversal Utilities for NAT (STUN)</li>
+		<li>RFC 5766: Traversal Using Relays around NAT (TURN): Relay Extensions to STUN</li>
+		<li>RFC 5245: Interactive Connectivity Establishment (ICE): A Protocol for NAT Traversal for Offer/Answer Protocols</li>
+	</ul>
+	
+	<h1 class="section highlight">Articles</h1>
+	<ul>
+		<li><a href="stun" target="_blank">NAT discovery with STUN server</a></li>
+	</ul>
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<p>Copyright 2010-2014 Limlabs. Please contact at <a href="#">support@limlabs.com</a> for any questions.</p>
+	</div>
+</div>
+</body>
+</html>
+

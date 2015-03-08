@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<title>Limlabs - Clipboard Sender</title>
+	<!-- css3-mediaqueries.js for IE8 or older -->
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div id="header">
+	<div class="container">
+		<a href="/"><img src="/images/logo.png" /></a>
+		<h1>Limlabs</h1>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/technologies">Technologies</a></li>
+			<li><a href="/projects">Projects</a></li>
+			<li><a href="/news">News</a></li>
+			<li><a href="/about">About</a></li>
+		</ul>
+	</div>
+</div>
+<div id="main">
+	<div class="container">
+		<h1>Clipboard Sender</h1>
+
+		<p>This program demonstrated the technologies of system clipboard, keyboard hook, and HTTP communication on Windows system. The demo program is a desktop application that captures the contents of system clipboard and sends to a given URL via HTTP POST method. Extra information like user name or email address may be sent along with clipboard contents.</p>
+		
+		<h2>System Clipboard</h2>
+		<p>On Windows, the contents of system clipboard are organized into different “types”.  For example, text in clipboard is usually labeled with a type of “CF_TEXT” while picture is labeled with “CF_BITMAP”. There is a set of Win32 APIs provided to set and get the contents of system clipboard. </p>
+		
+		<h2>HTTP Communication</h2>
+		<p>HTTP is a protocol used in communication between web browser and web server. HTTP POST method sends data from client to server in message body rather than request URL like that in HTTP GET method. On Windows, Win32 APIs of WinHTTP provide all functions of HTTP client. With these APIs, we can send data in the message body of HTTP POST. Meanwhile, customized message headers can be assigned to carry extra information along with the message data. </p> 
+		<p>In general, web server tends to handle text with UTF-8 coding. The contents of system clipboard may be converted to UTF-8 code from Unicode before sending.</p> 
+		
+		<h2>Keyboard Hook</h2>
+		<p>Keyboard shortcut like CTRL+S is a convenient way to control when we should send the contents of system clipboard. In practice, sending occurred often in a context of any applications that are running. We need to capture keyboard shortcut even when our application window is not the focus. This task can be done with a global keyboard hook that implemented in a separate dynamic link library (DLL). The hook sends a message to the application’s window once the given shortcut CTRL+S is captured. </p>
+		
+		<h1 class="section">Demo Program</h1>
+		<p>We developed a desktop application to control the workflow and provide a graphic user interface (GUI) for possible configurations and notifications of running status. A system tray icon is a good choice for this application. A configuration window can be displayed from the tray icon to setup target URL, user name, email address, and any other information that may be sent along with the clipboard contents. In addition, when clipboard contents is sent to server or failed to send for some reasons, the tray icon may raise a notification with a bubble tip window shown as below screen shot:</p>
+		<img src="images/clipsender.png" />
+		
+		<h1 class="section">Possible Improvements</h1>
+		<p>Current demo program was developed with below constraints:</p>
+		<ol>
+			<li>Compiled and debugged with Visual C++ 2010 Express on Windows XP. No testing on other platforms.</li>
+			<li>Coding with C/C++, STL, Win32 API. No MFC and third-party libraries if possible. </li>
+			<li>Only handle contents in system clipboard with type “CF_TEXT”. </li>
+			<li>Sending clipboard contents to a given URL via HTTP POST. Possible response from HTTP server is ignored. </li>
+			<li>No configuration is implemented. Target URL is hard coded to local address (http://127.0.0.1:80). </li>
+		</ol>
+		<p>Accordingly, the possible improvements of the program include:</p>
+		<ol>
+			<li>Configuration GUI of the software. </li>
+			<li>Extra information sending along with clipboard contents.</li>
+			<li>Debug and testing on other Windows versions like Win7 and Win8.</li>
+			<li>Support picture in clipboard.</li>
+			<li>Refine design and implementation with object-oriented concept and design patterns to improve the maintainability and extensibility. </li>
+			<li>Transplant to other platforms like Mac OS X (and Linux). </li>
+		</ol>
+		
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<p>Copyright 2010-2014 Limlabs. Please contact at <a href="#">support@limlabs.com</a> for any questions.</p>
+	</div>
+</div>
+</body>
+</html>
+

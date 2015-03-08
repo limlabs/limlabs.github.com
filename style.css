@@ -75,6 +75,11 @@ ul li {
 	list-style-image: url('/images/li_yellow.png');
 }
 
+ul li, 
+ol li {
+	margin-bottom: 0.5em;
+}
+
 #header {
 	padding-top:1em;
 	padding-bottom:34px; /* the height of background image */
@@ -84,13 +89,13 @@ ul li {
 }
 
 #main {
-	padding:1em 0;
+	padding:1em 0 2em 0;
 	line-height:150%;
 	min-height: 400px;
 }
 
 #footer {
-	padding-bottom:2em;
+	padding-bottom:1em;
 	border-top:1px solid #aaa;
 }
 
@@ -171,7 +176,27 @@ ul li {
 }
 
 .section {
-	margin-top: 1em;
+	margin-top: 1.5em;
+}
+
+.highlight {
+	color: orange;
+}
+
+a.highlight:link {
+	color: orange;
+	text-decoration: none;
+}
+
+a.highlight:visited {
+	color: orange;
+	text-decoration: none;
+}
+
+a.highlight:hover, 
+a.highlight:active {
+	color: orange;
+	text-decoration: underline;
 }
 
 img.banner {
