@@ -102,10 +102,10 @@ ol li {
 .container {
 	margin:0 auto;
 	width:900px;
-	clear:both;
-	overflow:hidden; /* Necessary for background-position in header for IE 11 */
 	text-align:left;
 	font-size:100%;
+	overflow:hidden; /* Necessary for background-position in header for IE 11 */
+	clear:both;
 }
 
 /* 900 and less */
@@ -132,7 +132,7 @@ ol li {
 
 /* 480 and less*/
 @media screen and (max-width: 480px) {
-  #wrapper {
+  #container {
     font-size: 50%;
   }
 }
@@ -175,10 +175,6 @@ ol li {
 	text-decoration: underline;
 }
 
-.section {
-	margin-top: 1em;
-}
-
 .highlight {
 	color: orange;
 }
@@ -207,12 +203,65 @@ img.more {
 	margin-left: 0.5em;
 }
 
-img.right {
+.right {
 	float: right;
 }
 
-img.left {
+.left {
 	float: left;
 }
+
+table.project,
+table.tech {
+	margin: 0 0 30px 0;
+}
+
+table.project td.pic,
+table.tech td.pic {
+	border: 1px solid #BEBEBE;
+	padding: 5px;
+}
+
+table.project td.pic img {
+	width: 150px;
+}
+
+table.tech td.pic img {
+	width: 120px;
+}
+
+table.project td.text,
+table.tech td.text {
+	padding-left: 20px;
+	vertical-align: top;
+}
+
+div.box {
+	overflow: visible;
+    border:1px solid #B4B4B4;
+    -moz-border-radius: 5px;     
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+div.tech {
+	float: left;
+	margin-right:10px;
+	padding:4px;
+	height: 100px;
+	text-align: center;
+}
+
+div.tech img {
+	height: 75px;
+}
+
+div.tech p {
+	margin: 3px 0 0 0;
+	padding: 0;
+	font-size: 0.75em;
+}
+
+
 
 
