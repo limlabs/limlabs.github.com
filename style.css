@@ -80,6 +80,26 @@ ol li {
 	margin-bottom: 0.5em;
 }
 
+.highlight {
+	color: orange;
+}
+
+a.highlight:link {
+	color: orange;
+	text-decoration: none;
+}
+
+a.highlight:visited {
+	color: orange;
+	text-decoration: none;
+}
+
+a.highlight:hover, 
+a.highlight:active {
+	color: orange;
+	text-decoration: underline;
+}
+
 #header {
 	padding-top:1em;
 	padding-bottom:34px; /* the height of background image */
@@ -89,9 +109,9 @@ ol li {
 }
 
 #main {
-	padding:1em 0 2em 0;
+	padding-bottom:2em;
 	line-height:150%;
-	min-height: 400px;
+	min-height:400px;
 }
 
 #footer {
@@ -175,26 +195,6 @@ ol li {
 	text-decoration: underline;
 }
 
-.highlight {
-	color: orange;
-}
-
-a.highlight:link {
-	color: orange;
-	text-decoration: none;
-}
-
-a.highlight:visited {
-	color: orange;
-	text-decoration: none;
-}
-
-a.highlight:hover, 
-a.highlight:active {
-	color: orange;
-	text-decoration: underline;
-}
-
 img.banner {
 	width:100%;
 }
@@ -203,23 +203,30 @@ img.more {
 	margin-left: 0.5em;
 }
 
-.right {
+img.right {
 	float: right;
 }
 
-.left {
-	float: left;
+table td p {
+	margin: 0;
+	padding: 0;
+	font-size: 0.9375em;
 }
 
 table.project,
 table.tech {
-	margin: 0 0 30px 0;
+	margin: 0 0 1.5em 0;
+}
+
+table.project td,
+table.tech td {
+	line-height: 150%;
 }
 
 table.project td.pic,
 table.tech td.pic {
+	padding: 0;
 	border: 1px solid #BEBEBE;
-	padding: 5px;
 }
 
 table.project td.pic img {
@@ -227,12 +234,16 @@ table.project td.pic img {
 }
 
 table.tech td.pic img {
-	width: 120px;
+	width: 100px;
 }
 
-table.project td.text,
+table.project td.text {
+	padding-left: 1.5em;
+	vertical-align: top;
+}
+
 table.tech td.text {
-	padding-left: 20px;
+	padding-left: 0.5em;
 	vertical-align: top;
 }
 
@@ -246,7 +257,8 @@ div.box {
 
 div.tech {
 	float: left;
-	margin-right:10px;
+	margin-right:0.5em;
+	margin-bottom:2em;
 	padding:4px;
 	height: 100px;
 	text-align: center;
@@ -261,6 +273,12 @@ div.tech p {
 	padding: 0;
 	font-size: 0.75em;
 }
+
+div.threecol {
+	width: 33%;
+	float: left;
+}
+
 
 
 
